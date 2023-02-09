@@ -11,19 +11,12 @@ pipelineJob("Testing") {
             trim(false)
         }
     }
-  //  stage('Running-jobs')
-  //  {
-  //      cleanWs()
-  //      jobDsl scriptText: '''import jenkins.model.Jenkins'''
-
-  //      jobDsl targets: '''temp.groovy
-  //    '''
-   // }
     definition {
         cpsFlowDefinition {
             sandbox(true)
-            script('''
-            stage ("Version Tag") {
-            shell('echo $PWD')
-            }'''
+            script(''' 
+            stage ("Version Tag") { 
+                shell('echo $PWD') 
+                } ''')
 }
+    }
