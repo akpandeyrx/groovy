@@ -11,4 +11,9 @@ pipelineJob("Testing") {
             trim(false)
         }
     }
+    stage('Running-jobs')
+    {
+        jobDsl targets: '''temp.groovy
+      '''
+    }
 }
