@@ -22,7 +22,7 @@ pipelineJob("Testing") {
         stage ("Build 1")  {
         steps {
          sh   'printenv'  
-         sh "echo $BUILD_ID"
+         sh "echo $REPO_URL"
         }
         }
 }
