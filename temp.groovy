@@ -15,13 +15,18 @@ pipelineJob("Testing") {
         cpsFlowDefinition {
             sandbox(true)
             script('''
-            node('Jenkins-EC2-Slave')
-            cleanWs()
-            stage ("Version Tag") {
-              steps {
-                 shell('echo hello')
-                }  
-                }
+           pipeline{
+    agent any
+    
+     stages {
+        stage ("Build 1")  {
+        steps {
+         sh   'printenv'  
+         sh "echo $BUILD_ID"
+        }
+        }
+}
+}
             ''' )
 }
     }
