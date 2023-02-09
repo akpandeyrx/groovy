@@ -11,12 +11,12 @@ pipelineJob("Testing") {
             trim(false)
         }
     }
-    stage('Running-jobs')
-    {
-        cleanWs()
-        jobDsl scriptText: '''import jenkins.model.Jenkins'''
+  //  stage('Running-jobs')
+  //  {
+  //      cleanWs()
+  //      jobDsl scriptText: '''import jenkins.model.Jenkins'''
 
-        jobDsl targets: '''temp.groovy
-      '''
-    }
+  //      jobDsl targets: '''temp.groovy
+  //    '''
+   // }
 }
