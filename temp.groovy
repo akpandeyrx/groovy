@@ -14,9 +14,14 @@ pipelineJob("Testing") {
     definition {
         cpsFlowDefinition {
             sandbox(true)
-            script(''' 
-            stage ("Version Tag") { 
-                shell('echo $PWD') 
-                } ''')
+            script('''
+            node('Jenkins-EC2-Slave')
+            cleanWs()
+            stage ("Version Tag") {
+              steps {
+                 shell('echo hello')
+                }  
+                }
+            ''' )
 }
     }
