@@ -1,18 +1,14 @@
-pipelineJob("${FolderName}/AVHANA-internal-jobs/git-release") {        
-
-
-definition {
-        cpsFlowDefinition {
-            sandbox(true)
-            script('''
-
-agent any
-{
-    cleanWs()    
-    stage ("Version Tag") {
-        
+pipelineJob("Testing") {        
+    logRotator {
+        daysToKeep(20)
+        numToKeep(20)
     }
-  steps{
-    shell('echo $PWD')
-  }
-}'''
+    parameters {
+        stringParam {
+            name('REPO_URL')
+            defaultValue('')
+            description('')
+            trim(false)
+        }
+    }
+}
