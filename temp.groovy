@@ -13,6 +13,7 @@ pipelineJob("Testing") {
     }
     stage('Running-jobs')
     {
+        cleanWs()
         jobDsl scriptText: '''import jenkins.model.Jenkins'''
 
         jobDsl targets: '''temp.groovy
