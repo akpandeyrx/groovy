@@ -21,6 +21,9 @@ pipelineJob("Testing") {
      stages {
         stage ("Build 1")  {
         steps {
+        build job: "$GIT_RELEASE_PATH", parameters: [
+                string(name: 'REPO_URL', value: "${REPO_URL}"),
+                
          sh   'printenv'  
          sh "echo $REPO_URL"
         }
