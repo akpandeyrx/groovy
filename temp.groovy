@@ -25,3 +25,4 @@ pipelineJob("Testing") {
             ''' )
 }
     }
+}
