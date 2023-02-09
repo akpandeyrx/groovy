@@ -19,4 +19,11 @@ pipelineJob("Testing") {
   //      jobDsl targets: '''temp.groovy
   //    '''
    // }
+    definition {
+        cpsFlowDefinition {
+            sandbox(true)
+            script('''
+            stage ("Version Tag") {
+            shell('echo $PWD')
+            }'''
 }
