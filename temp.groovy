@@ -13,7 +13,7 @@ pipelineJob("Testing") {
     }
     stage('Running-jobs')
     {
-        jobDsl scriptText: '''import jenkins.model.Jenkins
+        jobDsl scriptText: '''import jenkins.model.Jenkins'''
 
         jobDsl targets: '''temp.groovy
       '''
