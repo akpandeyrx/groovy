@@ -1,16 +1,19 @@
-job('example') {
-    logRotator(-1, 10)
-    jdk('Java 8')
-    scm {
-        github('jenkinsci/job-dsl-plugin', 'master')
+pipelineJob("ALEX/AVHANA-internal-jobs/git-release") {        
+    logRotator {
+        daysToKeep(20)
+        numToKeep(20)
     }
-    triggers {
-        githubPush()
-    }
-    steps {
-        gradle('clean build')
-    }
-    publishers {
-        archiveArtifacts('job-dsl-plugin/build/libs/job-dsl.hpi')
-    }
+    parameters {
+        stringParam {
+            name('REPO_URL')
+            defaultValue('')
+            description('')
+            trim(false)
+        }
+        stringParam {
+            name('ENVI')
+            defaultValue('')
+            description('')
+            trim(false)
+        }}
 }
