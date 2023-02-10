@@ -1,4 +1,4 @@
-pipelineJob("ALEX") {        
+pipelineJob("git") {        
     logRotator {
         daysToKeep(20)
         numToKeep(20)
