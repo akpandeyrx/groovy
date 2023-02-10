@@ -1,4 +1,4 @@
-pipelineJob("ALEX/AVHANA-internal-jobs/git-release") {        
+pipelineJob("ALEX") {        
     logRotator {
         daysToKeep(20)
         numToKeep(20)
