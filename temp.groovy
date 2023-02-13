@@ -1,4 +1,4 @@
-folder('${FolderName}') {
+folder("${FolderName}") {
     description('Folder containing all jobs for folder-a')
 }
 job('${FolderName}/job-a') {
