@@ -20,5 +20,9 @@ jobs:
           - fruit: banana
           - fruit: banana
             animal: cat
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
 
