@@ -9,17 +9,16 @@ jobs:
   example_matrix:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
-        node: [14, 16]
+        fruit: [apple, pear]
+        animal: [cat, dog]
         include:
-          - os: windows-latest
-            node: 16
-            npm: 6
+          - color: green
+          - color: pink
+            animal: cat
+          - fruit: apple
+            shape: circle
+          - fruit: banana
+          - fruit: banana
+            animal: cat
     runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-      - if: ${{ matrix.npm }}
-        run: npm install -g npm@${{ matrix.npm }}
-      - run: npm --version
+
